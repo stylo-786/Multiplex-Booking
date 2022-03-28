@@ -39,7 +39,7 @@ public class UserController {
 		if(tempCPassward != null && !tempCPassward.equals(tempPassward)) {
 		throw new PasswordNotMatchException();
 		}
-		if(userDto.getEmailId().isEmpty() || userDto.getEmailId().isBlank() || !userDto.getEmailId().matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")) {
+		if(userDto.getEmailId().isEmpty() || userDto.getEmailId().isEmpty() || !userDto.getEmailId().matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")) {
 			throw new EmailIdFormatException("Email Id is Wrong format");
 			}
 
