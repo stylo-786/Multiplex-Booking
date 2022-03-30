@@ -19,8 +19,8 @@ public class BookingController {
     BookingService  bookingService;
 	@Autowired
 	BookingDtoToEntity bookingDtoToEntity;
-	  
-	  @CrossOrigin
+	
+	  @CrossOrigin     
 	  @PostMapping("/addbooking")
 	  public String addBooking(@RequestBody BookingDTO booking) throws BookingNotAddedException {
 		  boolean isBookingAdded=bookingService.addBooking(bookingDtoToEntity.convertbookingDtoToEntity(booking));
@@ -30,6 +30,7 @@ public class BookingController {
 			  throw new BookingNotAddedException();
 		  }
 		  }
+	  
 	@PostMapping("/cancelBooking")
 	  public String cancelBooking(@RequestParam Integer id) {
 		  boolean isBookingAdded=bookingService.cancelBooking(id);
